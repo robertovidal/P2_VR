@@ -16,6 +16,6 @@ public class PlayButton : MonoBehaviour
     }
 
     public void LoadMainScene() {
-        SceneManager.LoadScene("MainScene", LoadSceneMode.Additive);
+        SceneManager.LoadScene(1);
     }
 }
