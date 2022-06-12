@@ -8,6 +8,7 @@ public class FinalDoorController : MonoBehaviour
     public Animator door;
     private bool keyGrabbed;
     public GameObject key;
+    public AudioSource DoorSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,6 +36,7 @@ public class FinalDoorController : MonoBehaviour
         if(keyGrabbed && !opened){
             opened = true;
             door.SetBool("open", true);
+            DoorSound.Play();
             key.SetActive(false);
         }
     }

@@ -16,11 +16,18 @@ public class DoctorController : MonoBehaviour
     public GameObject SecondDoctor;
     private bool checkPosition;
     private float positionToCheck;
+    private Collider MyCollider;
     // Start is called before the first frame update
     void Start()
     {
         talked = false;
         checkPosition = false;
+        MyCollider = gameObject.GetComponent<Collider>();
+        if(PlayerPrefs.HasKey("volume")){
+            float wantedVolume = PlayerPrefs.GetFloat("volume",1f);
+            UnityEngine.Debug.Log(wantedVolume);
+            AudioListener.volume = wantedVolume;
+        }
     }
 
     // Update is called once per frame
@@ -66,10 +73,12 @@ public class DoctorController : MonoBehaviour
     private IEnumerator startTalking(){
         if (!talked){
             talked = true;
+            gameObject.transform.rotation = Quaternion.Euler(0, 180, 0);
             setAnimationTalking();
             instruccionesIniciales.Play();
             yield return new WaitForSeconds(instruccionesIniciales.clip.length - 2);
-            RotationController.transform.rotation = Quaternion.Euler(0, 180, 0);
+            MyCollider.enabled = false;
+            gameObject.transform.rotation = Quaternion.Euler(0, 90, 0);
             setAnimationWalking();
             positionToCheck = 19.5f;
             checkPosition = true;
@@ -85,7 +94,7 @@ public class DoctorController : MonoBehaviour
         setAnimationIdle();
         RotationController.transform.position = gameObject.transform.position;
         gameObject.transform.position = RotationController.transform.position;
-        RotationController.transform.rotation = Quaternion.Euler(0, 270, 0);
+        gameObject.transform.rotation = Quaternion.Euler(0, 180, 0);
         setAnimationWalking();
         yield return new WaitForSeconds(2f);
         setAnimationIdle();

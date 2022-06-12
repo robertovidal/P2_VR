@@ -19,11 +19,14 @@ public class SecondDoctorController : MonoBehaviour
     public GameObject ThirdDoctor;
     public Animator door;
     public GameObject RotationController;
+    public AudioSource DoorSound;
+    private Collider MyCollider;
 
     // Start is called before the first frame update
     void Start()
     {
         myAnimator = gameObject.GetComponent<Animator>();
+        MyCollider = gameObject.GetComponent<Collider>();
         talkedFirstInstructions = false;
         keyGrabbed = false;
         finishedTalking = false;
@@ -75,6 +78,7 @@ public class SecondDoctorController : MonoBehaviour
     private IEnumerator startTalking(){
         if (!talkedFirstInstructions){
             talkedFirstInstructions = true;
+            gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
             setAnimationTalking();
             instructions.Play();
             yield return new WaitForSeconds(instructions.clip.length);
@@ -87,6 +91,7 @@ public class SecondDoctorController : MonoBehaviour
             if(keyGrabbed)
                 instructionsAfterKey();
             else{
+                gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
                 setAnimationTalking();
                 keyNotGrabbed.Play();
                 yield return new WaitForSeconds(keyNotGrabbed.clip.length - 2);
@@ -103,11 +108,13 @@ public class SecondDoctorController : MonoBehaviour
 
     private IEnumerator instructionsAfterKeyCo(){
         key.SetActive(false);
+        gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
         setAnimationTalking();
         instructionsNextRoom.Play();
         yield return new WaitForSeconds(instructionsNextRoom.clip.length);
+        MyCollider.enabled = false;
         setAnimationWalking();
-        positionToCheck = -5.6f;
+        positionToCheck = -5.3f;
         checkPositionZ = true;
     }
 
@@ -116,6 +123,7 @@ public class SecondDoctorController : MonoBehaviour
         RotationController.transform.position = gameObject.transform.position;
         gameObject.transform.position = RotationController.transform.position;
         RotationController.transform.rotation = Quaternion.Euler(0, 0, 0);
+        gameObject.transform.rotation = Quaternion.Euler(0, 270, 0);
         setAnimationWalking();
         positionToCheck = -10f;
         checkPositionX = true;
@@ -125,6 +133,7 @@ public class SecondDoctorController : MonoBehaviour
         setAnimationIdle();
         RotationController.SetActive(false);
         ThirdDoctor.SetActive(true);
+        DoorSound.Play();
         door.SetBool("open", true);
     }
 

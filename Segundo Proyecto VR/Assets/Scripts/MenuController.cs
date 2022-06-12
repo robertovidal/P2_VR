@@ -11,7 +11,8 @@ public class MenuController : MonoBehaviour {
     // Start is called before the first frame update
     void Start()
     {
-        
+        AudioListener.volume = 0.5f;
+        PlayerPrefs.SetFloat("volume", 0.5f);
     }
 
     // Update is called once per frame
@@ -45,19 +46,23 @@ public class MenuController : MonoBehaviour {
 
     public void IncreaseVolume(Text text) {
         var currentValue = float.Parse(text.text);
+        UnityEngine.Debug.Log(currentValue);
         float newValue;
         if (currentValue<1.0f) {
             newValue = currentValue+0.1f;
             AudioListener.volume = newValue;
+            PlayerPrefs.SetFloat("volume", newValue);
             text.text = newValue.ToString("0.0");
         }
     }
     
     public void DecreaseVolume(Text text) {
         var currentValue = float.Parse(text.text);
+        UnityEngine.Debug.Log(currentValue);
         float newValue;
         if (currentValue>0.0f) {
             newValue = currentValue-0.1f;
+            PlayerPrefs.SetFloat("volume", newValue);
             AudioListener.volume = newValue;
             text.text = newValue.ToString("0.0");
         }
