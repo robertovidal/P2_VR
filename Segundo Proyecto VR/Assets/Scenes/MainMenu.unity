@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.010326834, g: 0.010326834, b: 0.012971398, a: 1}
+  m_IndirectSpecularColor: {r: 0.09835798, g: 0.100983, b: 0.08869124, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -219,7 +219,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &29139778
 RectTransform:
   m_ObjectHideFlags: 0
@@ -229,10 +229,11 @@ RectTransform:
   m_GameObject: {fileID: 29139777}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.35, y: 0.73, z: 1}
+  m_LocalScale: {x: 0.50777996, y: 0.73, z: 1}
   m_Children:
   - {fileID: 821607888}
   - {fileID: 360870663}
+  - {fileID: 661265160}
   m_Father: {fileID: 394794579}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -894,15 +895,15 @@ RectTransform:
   m_GameObject: {fileID: 360870662}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.857143, y: 1.369863, z: 1}
+  m_LocalScale: {x: 1.9271715, y: 1.369863, z: 1}
   m_Children: []
   m_Father: {fileID: 29139778}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 21, y: -510}
-  m_SizeDelta: {x: 674.8, y: 318.4}
+  m_AnchoredPosition: {x: 21, y: -554}
+  m_SizeDelta: {x: 1028.7, y: 537.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &360870664
 MonoBehaviour:
@@ -926,7 +927,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 940f42476129981438bc71ad51eb9799, type: 3}
-    m_FontSize: 60
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -937,9 +938,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Para jugar, siga al doctor del asilo. El juego se trata de explorar el
-    asilo y ayudar al doctor a buscar sus llaves. Para interactuar con objectos,
-    presione <redacted>
+  m_Text: "Para jugar, siga al doctor del asilo. El juego se trata de explorar el
+    asilo y ayudar al doctor a buscar sus llaves. \n\n- Para moverse use el joystick
+    derecho.\n\n- Para interactuar con objectos, presione (boton). \n\n- Para hacer
+    teleport presione (boton).\n\n- Para hacer grab puede usar el rayo del control
+    izquierdo, o tomar el objeto directamente con la mano derecha."
 --- !u!222 &360870665
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -977,7 +980,7 @@ RectTransform:
   m_GameObject: {fileID: 394794578}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 98.41}
-  m_LocalScale: {x: 0.03483988, y: 0.03483988, z: 0.03483988}
+  m_LocalScale: {x: 0.03518828, y: 0.03518828, z: 0.03518828}
   m_Children:
   - {fileID: 1724456505}
   - {fileID: 1449662765}
@@ -1165,7 +1168,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 506041295}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3, y: 0, z: 60}
+  m_LocalPosition: {x: 3, y: 0, z: 60}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 869900927}
@@ -1318,6 +1321,78 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 565885751}
+  m_CullTransparentMesh: 1
+--- !u!1 &661265159
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 661265160}
+  - component: {fileID: 661265162}
+  - component: {fileID: 661265161}
+  m_Layer: 5
+  m_Name: RawImage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &661265160
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 661265159}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 12.763003, y: 4.4936285, z: 1.7909468}
+  m_Children: []
+  m_Father: {fileID: 29139778}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 15, y: -321}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &661265161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 661265159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Texture: {fileID: 2800000, guid: 1eb768ee3081a064ea3268d52adfa750, type: 3}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+--- !u!222 &661265162
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 661265159}
   m_CullTransparentMesh: 1
 --- !u!1 &712625699
 GameObject:
@@ -1643,14 +1718,14 @@ RectTransform:
   m_GameObject: {fileID: 821607887}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.857143, y: 1.369863, z: 1}
+  m_LocalScale: {x: 2.0662858, y: 1.369863, z: 1}
   m_Children: []
   m_Father: {fileID: 29139778}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -506, y: -161}
+  m_AnchoredPosition: {x: -376, y: -128}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &821607889
